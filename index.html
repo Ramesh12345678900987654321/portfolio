@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M. Ramesh | Web Developer</title>
+
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p{
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background-color: #1b1b1b;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo small {
+  color: red;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.sidebar nav a:hover {
+  color: #00fff0;
+}
+
+/* INTRO */
+.intro {
+  background-image: url('https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg');
+  width: calc(100% - 220px);
+  margin-left: 0;
+  padding: 100px 30px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 3;
+  color: white;
+  min-height: 100vh;
+}
+
+.intro h1 {
+  font-size: 3rem;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+}
+
+.highlight {
+  text-shadow: 2px 2px 2px violet;
+}
+
+.sub {
+  margin: 20px 0;
+}
+
+h3{
+  font-size: 30px;
+}
+
+.side {
+  margin-left: 60px;
+  color: rgb(255, 255, 255);
+  width: 300px;
+}
+
+.card {
+  margin-top: 5px;
+  padding: 7px;
+  margin-left: 50px;
+  background: #676767;
+  border-radius: 5px;
+}
+
+.spam {
+  color: red;
+}
+
+.nav{
+  margin-bottom: auto;
+}
+
+.im{
+height: 2cm;
+width: 2cm;
+border-radius: 50%;
+}
+
+.p{
+  margin-right: 30px;
+}
+  </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <img src="images/logo.jpeg" class="im">
+    <p class="p">M. Ramesh</p>
+    <small>Developer</small>
+  </div>
+
+  <nav class="nav">
+    <a href="about.html">About</a>
+
+    <a href="work.html">Work</a>
+    <a href="resum.html">Resum</a>
+    <a href="contact.html">Contact</a>
+    <a href="project.html">Projects</a>
+  </nav>
+</div>
+
+<section class="intro">
+
+  <h1>Hi, I'm <span class="highlight">Ramesh</span></h1>
+  <h2>Web Developer</h2>
+  <p class="sub">Front End Developer / Programming Enthusiast</p>
+
+  <div class="side">
+    <h3>About Me</h3>
+
+    <p>
+      I’m currently pursuing a BCA degree. I'm passionate about web development 
+      and learning <span class="spam">HTML, CSS, JavaScript</span>.
+    </p>
+
+    <div class="card">🔥 Programming Enthusiast</div>
+    <div class="card">💻 Frontend & Backend Developer</div>
+    <div class="card">🎓 BCA Student</div>
+    <div class="card">📊 Data Structures and Algorithms</div>
+    <div class="card">⚙️ Software Engineering</div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
