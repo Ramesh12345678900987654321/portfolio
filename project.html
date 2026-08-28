@@ -1,148 +1,1237 @@
+<!DOCTYPE html>
 
-  <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>project</title>
-  
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="M. Ramesh - Projects Portfolio"
+>
+
+<title>Projects | M. Ramesh</title>
+
+
+<style>
+
+    /* =====================================================
+       PROFESSIONAL COLOR SYSTEM
+    ===================================================== */
+
+    :root {
+
+        --bg: #0B1120;
+        --panel: rgba(11, 17, 32, 0.82);
+
+        --primary: #3B82F6;
+        --primary-dark: #2563EB;
+
+        --secondary: #6366F1;
+        --accent: #38BDF8;
+
+        --text: #F8FAFC;
+        --text-secondary: #CBD5E1;
+        --muted: #94A3B8;
+
+        --border: rgba(255, 255, 255, 0.14);
+
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+    }
+
+
+    html {
+
+        scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+        font-family:
+            "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+
+        min-height: 100vh;
+
+        color: var(--text);
+
+        overflow-x: hidden;
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND
+    ===================================================== */
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: -2;
+
+        background:
+            linear-gradient(
+                rgba(11, 17, 32, 0.78),
+                rgba(11, 17, 32, 0.90)
+            ),
+            url("images/background_image.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        background-attachment: fixed;
+
+    }
+
+
+    /* =====================================================
+       MAIN PAGE
+    ===================================================== */
+
+    .page {
+
+        width: 100%;
+
+        max-width: 1250px;
+
+        margin: auto;
+
+        padding:
+            50px 25px 35px;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+
+        text-align: center;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .tag {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding:
+            7px 13px;
+
+        margin-bottom: 14px;
+
+        color: var(--accent);
+
+        background:
+            rgba(56, 189, 248, 0.08);
+
+        border:
+            1px solid rgba(56, 189, 248, 0.20);
+
+        border-radius: 50px;
+
+        font-size: 10px;
+
+        font-weight: 600;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .tag-dot {
+
+        width: 7px;
+
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: var(--accent);
+
+        box-shadow:
+            0 0 10px
+            rgba(56, 189, 248, 0.7);
+
+    }
+
+
+    header h1 {
+
+        font-size:
+            clamp(2.4rem, 6vw, 4.2rem);
+
+        line-height: 1.05;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    header h1 span {
+
+        color: var(--primary);
+
+    }
+
+
+    header p {
+
+        color: var(--text-secondary);
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       PROJECT GRID
+    ===================================================== */
+
+    .projects {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 20px;
+
+    }
+
+
+    /* =====================================================
+       PROJECT CARD
+    ===================================================== */
+
+    .project-card {
+
+        display: flex;
+
+        flex-direction: column;
+
+        overflow: hidden;
+
+        background:
+            rgba(11, 17, 32, 0.80);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 15px;
+
+        backdrop-filter: blur(10px);
+
+        -webkit-backdrop-filter: blur(10px);
+
+        box-shadow:
+            0 18px 45px
+            rgba(0,0,0,0.28);
+
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+
+    }
+
+
+    .project-card:hover {
+
+        transform:
+            translateY(-7px);
+
+        border-color:
+            rgba(59,130,246,0.35);
+
+        box-shadow:
+            0 25px 55px
+            rgba(0,0,0,0.38);
+
+    }
+
+
+    /* =====================================================
+       IMAGE
+    ===================================================== */
+
+    .image-container {
+
+        width: 100%;
+
+        height: 190px;
+
+        overflow: hidden;
+
+        background: #111827;
+
+    }
+
+
+    .project-image {
+
+        width: 100%;
+
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        transition:
+            transform 0.4s ease;
+
+    }
+
+
+    .project-card:hover
+    .project-image {
+
+        transform:
+            scale(1.05);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .project-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        flex: 1;
+
+        padding: 20px;
+
+    }
+
+
+    .project-number {
+
+        color: var(--accent);
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: 1.5px;
+
+        text-transform: uppercase;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .project-content h2 {
+
+        color: var(--text);
+
+        font-size: 17px;
+
+        line-height: 1.35;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .project-content p {
+
+        color: var(--muted);
+
+        font-size: 12px;
+
+        line-height: 1.7;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* =====================================================
+       TECHNOLOGY TAGS
+    ===================================================== */
+
+    .technologies {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .tech {
+
+        padding:
+            5px 8px;
+
+        color:
+            var(--text-secondary);
+
+        background:
+            rgba(59,130,246,0.07);
+
+        border:
+            1px solid
+            rgba(59,130,246,0.18);
+
+        border-radius:
+            5px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    /* =====================================================
+       PROJECT LINK
+    ===================================================== */
+
+    .project-link {
+
+        margin-top: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        width: 100%;
+
+        padding:
+            10px 14px;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-dark)
+            );
+
+        border-radius: 7px;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        text-decoration: none;
+
+        transition: 0.25s;
+
+    }
+
+
+    .project-link:hover {
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 8px 20px
+            rgba(37,99,235,0.30);
+
+    }
+
+
+    /* =====================================================
+       BOTTOM SECTION
+    ===================================================== */
+
+    .bottom-section {
+
+        margin-top:
+            30px;
+
+        padding:
+            25px;
+
+        text-align:
+            center;
+
+        background:
+            rgba(11,17,32,0.76);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            15px;
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+
+    }
+
+
+    .bottom-section h3 {
+
+        font-size:
+            19px;
+
+        margin-bottom:
+            8px;
+
+    }
+
+
+    .bottom-section h3 span {
+
+        color:
+            var(--accent);
+
+    }
+
+
+    .bottom-section p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            12px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    /* =====================================================
+       HOME BUTTON
+    ===================================================== */
+
+    .home-button {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        margin-top:
+            15px;
+
+        padding:
+            10px 18px;
+
+        color:
+            var(--text-secondary);
+
+        background:
+            rgba(255,255,255,0.04);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            7px;
+
+        font-size:
+            11px;
+
+        text-decoration:
+            none;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .home-button:hover {
+
+        color:
+            white;
+
+        background:
+            rgba(255,255,255,0.08);
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+        text-align:
+            center;
+
+        margin-top:
+            25px;
+
+        color:
+            rgba(255,255,255,0.50);
+
+        font-size:
+            10px;
+
+    }
+
+
+    footer span {
+
+        color:
+            var(--accent);
+
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 950px) {
+
+        .projects {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 600px) {
+
+        body::before {
+
+            background-attachment:
+                scroll;
+
+        }
+
+
+        .page {
+
+            padding:
+                30px 13px 20px;
+
+        }
+
+
+        header {
+
+            margin-bottom:
+                28px;
+
+        }
+
+
+        header h1 {
+
+            font-size:
+                2.5rem;
+
+            letter-spacing:
+                -1.5px;
+
+        }
+
+
+        header p {
+
+            font-size:
+                12px;
+
+        }
+
+
+        .projects {
+
+            grid-template-columns:
+                1fr;
+
+            gap:
+                16px;
+
+        }
+
+
+        .image-container {
+
+            height:
+                210px;
+
+        }
+
+
+        .project-content {
+
+            padding:
+                19px;
+
+        }
+
+
+        .project-content h2 {
+
+            font-size:
+                18px;
+
+        }
+
+
+        .project-content p {
+
+            font-size:
+                12px;
+
+        }
+
+
+        .bottom-section {
+
+            padding:
+                20px 15px;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 350px) {
+
+        header h1 {
+
+            font-size:
+                2.2rem;
+
+        }
+
+
+        .image-container {
+
+            height:
+                180px;
+
+        }
+
+    }
+
+</style>
+```
+
 </head>
+
 <body>
 
-  <header>
-    <h1>🌐 My Projects</h1>
-    <p>Sharing my projects, ideas & learning journey</p>
-  </header>
+```
+<div class="page">
 
-  <main>
-  
-    <div class="blog-card">
-      
-      <img src="images/login.png" class="img">
-      <h2>🚀 My Login Page Project</h2>
-      <p>I created a login page with backend connection using Node.js and MySQL. You can check it here:</p>
-      <a href="https://ramesh12345678900987654321.github.io/login-page/" target="_blank">🔗 View Project</a>
-    </div>
-    
-    <div class="blog-card">
-       <img src="images/neural.avif" class="img">
-      <h2>🧠 Learning Neural Networks</h2>
-      <p>I tried to build a small neural network in Python. Still learning, but you can see my code here:</p>
-      <a href="https://github.com/your-username/neural-network-test" target="_blank">🔗 View on GitHub</a>
-    </div>
-  
-    <div class="blog-card">
-        <img src="images/calcul.jpg" class="img">
-  <h2>🧮 Calculator Project</h2>
-  <p>I built a simple calculator using HTML, CSS, and JavaScript. You can try it out here:</p>
-  <a href="https://ramesh12345678900987654321.github.io/mr/" target="_blank">🔗 Open Calculator</a>
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header>
+
+
+        <div class="tag">
+
+            <span class="tag-dot"></span>
+
+            Portfolio
+
+        </div>
+
+
+        <h1>
+
+            My
+            <span>
+                Projects
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Sharing my projects, ideas and learning journey.
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         PROJECT GRID
+    ================================================= -->
+
+    <main class="projects">
+
+
+        <!-- PROJECT 01 -->
+
+        <article class="project-card">
+
+            <div class="image-container">
+
+                <img
+                    src="images/login.png"
+                    alt="Login Page Project"
+                    class="project-image"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    Project 01
+                </div>
+
+
+                <h2>
+                    🚀 My Login Page
+                </h2>
+
+
+                <p>
+
+                    A login page project with backend
+                    connectivity using Node.js and MySQL.
+
+                </p>
+
+
+                <div class="technologies">
+
+                    <span class="tech">HTML</span>
+
+                    <span class="tech">CSS</span>
+
+                    <span class="tech">Node.js</span>
+
+                    <span class="tech">MySQL</span>
+
+                </div>
+
+
+                <a
+                    href="https://ramesh12345678900987654321.github.io/login-page/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
+                    🔗 View Project
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 02 -->
+
+        <article class="project-card">
+
+            <div class="image-container">
+
+                <img
+                    src="images/neural.avif"
+                    alt="Neural Network Project"
+                    class="project-image"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    Project 02
+                </div>
+
+
+                <h2>
+                    🧠 Neural Networks
+                </h2>
+
+
+                <p>
+
+                    A small neural network experiment built
+                    in Python while learning AI and machine
+                    learning concepts.
+
+                </p>
+
+
+                <div class="technologies">
+
+                    <span class="tech">Python</span>
+
+                    <span class="tech">AI</span>
+
+                    <span class="tech">Machine Learning</span>
+
+                </div>
+
+
+                <a
+                    href="https://github.com/your-username/neural-network-test"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
+                    🔗 View on GitHub
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 03 -->
+
+        <article class="project-card">
+
+            <div class="image-container">
+
+                <img
+                    src="images/calcul.jpg"
+                    alt="Calculator Project"
+                    class="project-image"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    Project 03
+                </div>
+
+
+                <h2>
+                    🧮 Calculator
+                </h2>
+
+
+                <p>
+
+                    A simple interactive calculator developed
+                    using HTML, CSS and JavaScript.
+
+                </p>
+
+
+                <div class="technologies">
+
+                    <span class="tech">HTML</span>
+
+                    <span class="tech">CSS</span>
+
+                    <span class="tech">JavaScript</span>
+
+                </div>
+
+
+                <a
+                    href="https://ramesh12345678900987654321.github.io/mr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
+                    🔗 Open Calculator
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project-card">
+
+            <div class="image-container">
+
+                <img
+                    src="images/employee.jpg"
+                    alt="Employee Form Project"
+                    class="project-image"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    Project 04
+                </div>
+
+
+                <h2>
+                    👨‍💼 Employee Form
+                </h2>
+
+
+                <p>
+
+                    A company employee form developed using
+                    HTML, CSS, JavaScript, Node.js and MySQL.
+                    Employee information can be submitted
+                    through the form and stored in a database.
+
+                </p>
+
+
+                <div class="technologies">
+
+                    <span class="tech">HTML</span>
+
+                    <span class="tech">CSS</span>
+
+                    <span class="tech">JavaScript</span>
+
+                    <span class="tech">Node.js</span>
+
+                    <span class="tech">MySQL</span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+
+                    🔗 View Employee Form
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 05 -->
+
+        <article class="project-card">
+
+            <div class="image-container">
+
+                <img
+                    src="images/dashboard.png"
+                    alt="Department Dashboard"
+                    class="project-image"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    Project 05
+                </div>
+
+
+                <h2>
+                    📊 Department Dashboard
+                </h2>
+
+
+                <p>
+
+                    A web-based Department Dashboard designed
+                    to manage and monitor department activities
+                    in a college, company or organization.
+
+                </p>
+
+
+                <div class="technologies">
+
+                    <span class="tech">HTML</span>
+
+                    <span class="tech">CSS</span>
+
+                    <span class="tech">JavaScript</span>
+
+                    <span class="tech">Dashboard</span>
+
+                </div>
+
+
+                <a
+                    href="https://ramesh12345678900987654321.github.io/dashboard_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
+                    🔗 View Dashboard
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         BOTTOM
+    ================================================= -->
+
+    <section class="bottom-section">
+
+
+        <h3>
+
+            More projects
+            <span>
+                coming soon.
+            </span>
+
+        </h3>
+
+
+        <p>
+
+            I'm continuously learning new technologies
+            and building projects to improve my development
+            skills.
+
+        </p>
+
+
+        <a
+            href="index.html"
+            class="home-button"
+        >
+
+            ← Back to Home
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+        © 2026
+        <span>
+            M. Ramesh
+        </span>
+        | All Rights Reserved
+
+    </footer>
+
+
 </div>
-    <div class="blog-card">
-      <img src="images/employee.jpg" class="img">
-      <h2>A Company Employee Form</h2>
-      <p>
-This project is developed using HTML, CSS, JavaScript,
-Node.js, and MySQL. Employees can enter their details
-through the form, and the data is securely stored in
-the database using backend connectivity.</p>
-  <a href="" target="_blank">🔗 view Employee form</a>
-    </div>
-     <div class="blog-card">
-      <img src="images/dashboard.png" class="img">
-      <h2>Department Dashboard</h2>
-      <p>A Department Dashboard is a web-based system used to manage and monitor department activities in a college, company, or organization.</p>
-  <a href=" https://ramesh12345678900987654321.github.io/dashboard_/" target="_blank">🔗 view Employee form</a>
-    </div>
-    
-  </main>
-  <style>
-    /* Reset */
+```
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-body {
- background-color: #272727;
-  padding: 20px;
-}
-
-/* Header */
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: #6c63ff;
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #599af0;
-  
-}
-
-/* Blog Cards */
-.blog-card {
-  background: #ffffffef;
-   display: inline-block;
-margin-left: 90px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  vertical-align:top;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-}
-
-.blog-card h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.blog-card p {
-  margin-bottom: 12px;
-  margin: 20px;
-}
-
-.blog-card a {
-  text-decoration: none;
-  color: white;
-  background: #6c63ff;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.blog-card a:hover {
-  background: #574b90;
-}
-
-.img{
-  height: 7cm;
-  width: 10cm;
-
-
-  
-}
-
-.blog-card{
-  height: 13cm;
-  width: 10cm;
-   margin-top: 20px;    
-}
-h2{
-color: red;
-}
-  
-
-  </style>
 </body>
+
 </html>
