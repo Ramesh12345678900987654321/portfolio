@@ -1,197 +1,1554 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Contact M. Ramesh</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Contact M. Ramesh - Web Developer"
+>
+
+<title>Contact M. Ramesh | Web Developer</title>
+
+
+<!-- Font Awesome -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
+
+<style>
+
+    /* =====================================================
+       PROFESSIONAL COLOR SYSTEM
+    ===================================================== */
+
+    :root {
+
+        --bg: #0B1120;
+
+        --panel: rgba(11, 17, 32, 0.80);
+
+        --panel-light: rgba(17, 24, 39, 0.72);
+
+        --primary: #3B82F6;
+
+        --primary-dark: #2563EB;
+
+        --secondary: #6366F1;
+
+        --accent: #38BDF8;
+
+        --text: #F8FAFC;
+
+        --text-secondary: #CBD5E1;
+
+        --muted: #94A3B8;
+
+        --border: rgba(255, 255, 255, 0.15);
+
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
-      
-      margin: 0%;
-      padding: 0%;
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
     }
 
-  body {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.134), 
-      rgba(255, 255, 255, 0.127)
-    ),
-    url('https://as1.ftcdn.net/v2/jpg/02/06/92/58/1000_F_206925823_SgmybBfJWW2pnWvywT0QGOZBfGpkUg2m.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
+    html {
 
+        scroll-behavior: smooth;
 
-    .card {
-      margin-top: 1cm;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      width: 90%;
-      max-width: 500px;
-      text-align: center;
-      transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+
+    body {
+
+        font-family:
+            "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+
+        min-height: 100vh;
+
+        color:
+            var(--text);
+
+        overflow-x: hidden;
+
     }
 
-    h2 {
-      font-size: 28px;
-      color: darkorchid;
-      margin-bottom: 20px;
-      font-weight: 500;
+
+    a {
+
+        text-decoration: none;
+
     }
 
-    .info {
-      font-size: 16px;
-      color: rgba(21, 21, 21, 0.886);
-      margin: 10px 0;
+
+    /* =====================================================
+       ORIGINAL CONTACT BACKGROUND
+    ===================================================== */
+
+    .background {
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: -2;
+
+        background-image:
+            url(
+                "https://as1.ftcdn.net/v2/jpg/02/06/92/58/1000_F_206925823_SgmybBfJWW2pnWvywT0QGOZBfGpkUg2m.jpg"
+            );
+
+        background-size:
+            cover;
+
+        background-position:
+            center;
+
+        background-repeat:
+            no-repeat;
+
+        background-attachment:
+            fixed;
+
     }
 
-    .info a {
-      color: #2980b9;
-      text-decoration: none;
+
+    /* Professional light overlay */
+
+    .background::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            rgba(11, 17, 32, 0.42);
+
     }
 
-    .info a:hover {
-      text-decoration: underline;
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    .page {
+
+        min-height: 100vh;
+
+        padding:
+            50px 20px 25px;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
     }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .header {
+
+        width: 100%;
+
+        max-width: 900px;
+
+        text-align: center;
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    .tag {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        gap:
+            8px;
+
+        padding:
+            7px 13px;
+
+        margin-bottom:
+            13px;
+
+        color:
+            var(--accent);
+
+        background:
+            rgba(56,189,248,0.08);
+
+        border:
+            1px solid rgba(56,189,248,0.20);
+
+        border-radius:
+            50px;
+
+        font-size:
+            10px;
+
+        font-weight:
+            600;
+
+        letter-spacing:
+            2px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .tag-dot {
+
+        width:
+            7px;
+
+        height:
+            7px;
+
+        border-radius:
+            50%;
+
+        background:
+            var(--accent);
+
+        box-shadow:
+            0 0 10px rgba(56,189,248,0.7);
+
+    }
+
+
+    .header h1 {
+
+        font-size:
+            clamp(2.3rem, 6vw, 4.2rem);
+
+        line-height:
+            1.05;
+
+        letter-spacing:
+            -2px;
+
+        margin-bottom:
+            12px;
+
+    }
+
+
+    .header h1 span {
+
+        color:
+            var(--primary);
+
+    }
+
+
+    .header p {
+
+        color:
+            var(--text-secondary);
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* =====================================================
+       MAIN CONTACT CARD
+    ===================================================== */
+
+    .contact-card {
+
+        width:
+            100%;
+
+        max-width:
+            900px;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            20px;
+
+        padding:
+            25px;
+
+        background:
+            rgba(11,17,32,0.80);
+
+        border:
+            1px solid rgba(255,255,255,0.15);
+
+        border-radius:
+            20px;
+
+        backdrop-filter:
+            blur(12px);
+
+        -webkit-backdrop-filter:
+            blur(12px);
+
+        box-shadow:
+            0 25px 70px rgba(0,0,0,0.40);
+
+    }
+
+
+    /* =====================================================
+       CONTACT INFORMATION
+    ===================================================== */
+
+    .contact-info {
+
+        padding:
+            25px;
+
+        background:
+            rgba(255,255,255,0.035);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            15px;
+
+    }
+
+
+    .contact-info h2 {
+
+        font-size:
+            23px;
+
+        margin-bottom:
+            8px;
+
+    }
+
+
+    .contact-info .description {
+
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.7;
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    /* =====================================================
+       CONTACT ITEM
+    ===================================================== */
+
+    .contact-item {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            13px;
+
+        padding:
+            13px;
+
+        margin-bottom:
+            10px;
+
+        background:
+            rgba(255,255,255,0.035);
+
+        border:
+            1px solid rgba(255,255,255,0.08);
+
+        border-radius:
+            10px;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .contact-item:hover {
+
+        transform:
+            translateX(4px);
+
+        background:
+            rgba(59,130,246,0.08);
+
+        border-color:
+            rgba(59,130,246,0.25);
+
+    }
+
+
+    .contact-icon {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        flex-shrink:
+            0;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border-radius:
+            9px;
+
+        color:
+            var(--accent);
+
+        background:
+            rgba(59,130,246,0.10);
+
+    }
+
+
+    .contact-item small {
+
+        display:
+            block;
+
+        color:
+            var(--muted);
+
+        font-size:
+            9px;
+
+        text-transform:
+            uppercase;
+
+        letter-spacing:
+            1.2px;
+
+        margin-bottom:
+            3px;
+
+    }
+
+
+    .contact-item a {
+
+        color:
+            var(--text-secondary);
+
+        font-size:
+            12px;
+
+        word-break:
+            break-word;
+
+    }
+
+
+    .contact-item a:hover {
+
+        color:
+            var(--accent);
+
+    }
+
+
+    /* =====================================================
+       SOCIAL MEDIA
+    ===================================================== */
+
+    .social-title {
+
+        color:
+            var(--text-secondary);
+
+        font-size:
+            11px;
+
+        font-weight:
+            600;
+
+        text-transform:
+            uppercase;
+
+        letter-spacing:
+            1.5px;
+
+        margin-top:
+            23px;
+
+        margin-bottom:
+            12px;
+
+    }
+
 
     .social-icons {
-      margin-top: 25px;
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            9px;
+
     }
+
 
     .social-icons a {
-      color: black;
-      margin: 0 10px;
-      font-size: 26px;
-      transition: color 0.3s, transform 0.3s;
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        color:
+            var(--text-secondary);
+
+        background:
+            rgba(255,255,255,0.045);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            9px;
+
+        font-size:
+            17px;
+
+        transition:
+            0.25s;
+
     }
+
 
     .social-icons a:hover {
-      color: red;
-      transform: scale(1.2);
+
+        color:
+            white;
+
+        background:
+            var(--primary);
+
+        border-color:
+            var(--primary);
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 8px 20px
+            rgba(59,130,246,0.25);
+
     }
 
-    li, ul {
-      display: inline-block;
+
+    /* =====================================================
+       RIGHT SIDE
+    ===================================================== */
+
+    .connect-panel {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        justify-content:
+            space-between;
+
+        padding:
+            25px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(59,130,246,0.11),
+                rgba(99,102,241,0.07)
+            );
+
+        border:
+            1px solid rgba(59,130,246,0.18);
+
+        border-radius:
+            15px;
+
     }
 
-    .button {
-      background-color: whitesmoke;
-      height: 1cm;
-      width: 2cm;
-      border-radius: 10px;
-      font-weight: 400;
-      font-size: 0.5cm;
-      margin-top: 3cm;
-      position: absolute;
+
+    .connect-panel .big-icon {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        color:
+            white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+        border-radius:
+            13px;
+
+        font-size:
+            23px;
+
+        margin-bottom:
+            25px;
+
+        box-shadow:
+            0 10px 25px
+            rgba(37,99,235,0.25);
+
     }
 
-    /* ✅ New Professional Bottom Section */
+
+    .connect-panel h2 {
+
+        font-size:
+            clamp(1.8rem, 4vw, 2.5rem);
+
+        line-height:
+            1.1;
+
+        margin-bottom:
+            13px;
+
+    }
+
+
+    .connect-panel h2 span {
+
+        color:
+            var(--accent);
+
+    }
+
+
+    .connect-panel p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    /* =====================================================
+       HIGHLIGHT
+    ===================================================== */
+
+    .highlight {
+
+        color:
+            var(--accent);
+
+        font-weight:
+            600;
+
+    }
+
+
+    /* =====================================================
+       AVAILABILITY
+    ===================================================== */
+
+    .availability {
+
+        margin-top:
+            25px;
+
+        padding:
+            15px;
+
+        background:
+            rgba(0,0,0,0.15);
+
+        border:
+            1px solid rgba(255,255,255,0.09);
+
+        border-radius:
+            10px;
+
+    }
+
+
+    .availability-title {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            8px;
+
+        color:
+            var(--text);
+
+        font-size:
+            12px;
+
+        font-weight:
+            600;
+
+        margin-bottom:
+            5px;
+
+    }
+
+
+    .online-dot {
+
+        width:
+            7px;
+
+        height:
+            7px;
+
+        border-radius:
+            50%;
+
+        background:
+            #22C55E;
+
+        box-shadow:
+            0 0 9px
+            rgba(34,197,94,0.6);
+
+    }
+
+
+    .availability p {
+
+        font-size:
+            11px;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    /* =====================================================
+       BUTTON
+    ===================================================== */
+
+    .email-button {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            8px;
+
+        width:
+            100%;
+
+        padding:
+            12px 18px;
+
+        margin-top:
+            20px;
+
+        color:
+            white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-dark)
+            );
+
+        border-radius:
+            8px;
+
+        font-size:
+            12px;
+
+        font-weight:
+            600;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .email-button:hover {
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 12px 28px
+            rgba(37,99,235,0.30);
+
+    }
+
+
+    /* =====================================================
+       BOTTOM MESSAGE
+    ===================================================== */
+
     .bottom-info {
-      margin-top: 40px;
-      background: #fff;
-      padding: 25px;
-      border-radius: 20px;
-      width: 80%;
-      max-width: 700px;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: 0.4s ease;
+
+        width:
+            100%;
+
+        max-width:
+            900px;
+
+        margin-top:
+            20px;
+
+        padding:
+            20px 25px;
+
+        text-align:
+            center;
+
+        background:
+            rgba(11,17,32,0.75);
+
+        border:
+            1px solid rgba(255,255,255,0.12);
+
+        border-radius:
+            15px;
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+
     }
+
 
     .bottom-info h3 {
-      font-size: 24px;
-      color: #2c3e50;
-      margin-bottom: 10px;
+
+        font-size:
+            17px;
+
+        margin-bottom:
+            6px;
+
     }
+
 
     .bottom-info p {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 15px;
+
+        color:
+            var(--muted);
+
+        font-size:
+            12px;
+
+        line-height:
+            1.6;
+
     }
 
-    .bottom-info .highlight {
-      color: darkorchid;
-      font-weight: bold;
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+        width:
+            100%;
+
+        max-width:
+            900px;
+
+        margin-top:
+            18px;
+
+        padding:
+            15px;
+
+        text-align:
+            center;
+
+        color:
+            rgba(255,255,255,0.60);
+
+        font-size:
+            10px;
+
     }
 
-    .bottom-info:hover {
-      transform: scale(1.01);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    footer span {
+
+        color:
+            var(--accent);
+
     }
-    .div{
-      height: 1.5cm;
-      width: 40.60cm;
-      background-color: rgb(56, 54, 54);
-      margin-top: 5.5cm;
-      border-radius: 0.5cm;
-      text-align: center;
-      color: white;
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 750px) {
+
+        .page {
+
+            padding:
+                40px 15px 20px;
+
+        }
+
+
+        .contact-card {
+
+            grid-template-columns:
+                1fr;
+
+            max-width:
+                600px;
+
+        }
+
+
+        .connect-panel {
+
+            min-height:
+                320px;
+
+        }
+
     }
-    .para{
-      margin-top: 0.5cm;
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 500px) {
+
+        .background {
+
+            background-attachment:
+                scroll;
+
+        }
+
+
+        .page {
+
+            padding:
+                25px 12px 15px;
+
+        }
+
+
+        .header {
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .header h1 {
+
+            font-size:
+                2.5rem;
+
+            letter-spacing:
+                -1.5px;
+
+        }
+
+
+        .header p {
+
+            font-size:
+                12px;
+
+        }
+
+
+        .contact-card {
+
+            padding:
+                12px;
+
+            gap:
+                12px;
+
+            border-radius:
+                15px;
+
+        }
+
+
+        .contact-info,
+        .connect-panel {
+
+            padding:
+                20px;
+
+            border-radius:
+                12px;
+
+        }
+
+
+        .contact-info h2 {
+
+            font-size:
+                20px;
+
+        }
+
+
+        .contact-item {
+
+            padding:
+                11px;
+
+        }
+
+
+        .contact-item a {
+
+            font-size:
+                11px;
+
+        }
+
+
+        .connect-panel {
+
+            min-height:
+                auto;
+
+        }
+
+
+        .connect-panel h2 {
+
+            font-size:
+                2rem;
+
+        }
+
+
+        .bottom-info {
+
+            padding:
+                18px;
+
+        }
+
+
+        footer {
+
+            padding:
+                12px;
+
+        }
+
     }
-    .emty{
-      height: 3.5cm;
-      width: 40cm;
-      background-color: #555555b2;
-      margin: 0%;
-      border-radius: 0.5cm;
-      color: white;
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 350px) {
+
+        .header h1 {
+
+            font-size:
+                2.2rem;
+
+        }
+
+
+        .contact-info,
+        .connect-panel {
+
+            padding:
+                17px;
+
+        }
+
+
+        .contact-item a {
+
+            font-size:
+                10px;
+
+        }
+
     }
-    .h{
-      color: white;
-      margin-left: 15cm;
-      margin-top: 1cm;
-      font-size: 1cm;
-      text-shadow: 2px 2px 2px rgb(254, 120, 120);
-      text-transform: capitalize;
-    } 
-    
-  
-  </style>
+
+</style>
+
+
 </head>
-<body>
-  <div class="emty">
-  
-        <h1 class="h">Let’s Connect</h1>
-       
-  </div>
-  
-     <div class="card">
-    <h2>Contact M. Ramesh</h2>
-    <p class="info"><strong>Email:</strong> <a href="mailto:ramesh29202920@gamil.com">ramesh29202920@gamil.com</a></p>
-    <p class="info"><strong>Phone:</strong> <a href="tel:+917010626499">7010626499</a></p>
 
-    <div class="social-icons">
-      <a href="#" title="https://www.facebook.com/profile.php?id=61561373997299"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/ramesh_tn_alone/#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/rameshoffical" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </div>
-  <div class="bottom-info">
-    <h3>Let's Connect!</h3>
-    <p>Whether you're interested in working together or just want to say hi, feel free to reach out!</p>
-    <p>More projects and updates coming soon on this portfolio. Stay tuned and follow me on <span class="highlight">LinkedIn</span>!</p>
-  </div>
-  <div class="div">
-      <p class="para"> © 2025 M. Ramesh | All Rights Reserved</p>
-  </div>
+<body>
+
+
+<!-- =================================================
+     BACKGROUND
+================================================= -->
+
+<div class="background"></div>
+
+
+
+<!-- =================================================
+     PAGE
+================================================= -->
+
+<main class="page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="header">
+
+
+        <div class="tag">
+
+            <span class="tag-dot"></span>
+
+            Contact
+
+        </div>
+
+
+        <h1>
+
+            Let's
+            <span>
+                Connect
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Have a project, opportunity or question?
+            I'd love to hear from you.
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         CONTACT CARD
+    ================================================= -->
+
+    <section class="contact-card">
+
+
+        <!-- =================================================
+             CONTACT INFORMATION
+        ================================================= -->
+
+        <div class="contact-info">
+
+
+            <h2>
+                Contact M. Ramesh
+            </h2>
+
+
+            <p class="description">
+
+                Whether you're interested in working
+                together, discussing a project, or simply
+                want to say hello, feel free to reach out.
+
+            </p>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Email
+                    </small>
+
+                    <a
+                        href="mailto:ramesh29202920@gamil.com"
+                    >
+                        ramesh29202920@gamil.com
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-phone"></i>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Phone
+                    </small>
+
+                    <a
+                        href="tel:+917010626499"
+                    >
+                        +91 70106 26499
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SOCIAL -->
+
+            <div class="social-title">
+
+                Find Me Online
+
+            </div>
+
+
+            <div class="social-icons">
+
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61561373997299"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook"
+                >
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    title="Twitter"
+                >
+
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/ramesh_tn_alone/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram"
+                >
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/rameshoffical"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn"
+                >
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONNECT PANEL
+        ================================================= -->
+
+        <div class="connect-panel">
+
+
+            <div>
+
+
+                <div class="big-icon">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Let's build
+                    <span>
+                        something great.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    I'm interested in
+                    <span class="highlight">
+                        internships, freelance projects,
+                        part-time opportunities
+                    </span>
+
+                    and collaborations where I can learn,
+                    contribute and grow as a developer.
+
+                </p>
+
+
+                <div class="availability">
+
+
+                    <div class="availability-title">
+
+                        <span class="online-dot"></span>
+
+                        Available for Opportunities
+
+                    </div>
+
+
+                    <p>
+
+                        Open to connecting with people,
+                        companies and teams working on
+                        interesting technology projects.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <a
+                href="mailto:ramesh29202920@gamil.com"
+                class="email-button"
+            >
+
+                <i class="fas fa-envelope"></i>
+
+                Send Me an Email
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         BOTTOM INFORMATION
+    ================================================= -->
+
+    <section class="bottom-info">
+
+
+        <h3>
+            Thanks for visiting my portfolio!
+        </h3>
+
+
+        <p>
+
+            More projects and updates are coming soon.
+            Stay connected and follow my professional
+            journey on
+            <span class="highlight">
+                LinkedIn
+            </span>.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+        © 2026
+        <span>
+            M. Ramesh
+        </span>
+        | All Rights Reserved
+
+    </footer>
+
+
+</main>
+
 
 </body>
+
 </html>
