@@ -4,805 +4,1630 @@
 
 <head>
 
-  <meta charset="UTF-8">
+
+<meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
-  <title>M. Ramesh | Web Developer</title>
+<meta
+    name="description"
+    content="M. Ramesh - Web Developer and Programming Enthusiast"
+>
 
-  <style>
+<title>M. Ramesh | Web Developer</title>
 
-    /* ==============================
+
+<style>
+
+    /* ==================================================
        RESET
-    ============================== */
+    ================================================== */
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     html {
-      scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: #111;
+        font-family:
+            "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+
+        background: #05070d;
+
+        color: white;
+
+        min-height: 100vh;
+
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 
 
-    /* ==============================
-       MAIN LAYOUT
-    ============================== */
+    /* ==================================================
+       ANIMATED BACKGROUND
+    ================================================== */
 
-    .page {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
+    .background {
+        position: fixed;
+
+        inset: 0;
+
+        overflow: hidden;
+
+        pointer-events: none;
+
+        z-index: -1;
+    }
+
+    .orb {
+        position: absolute;
+
+        border-radius: 50%;
+
+        filter: blur(80px);
+
+        opacity: 0.35;
+    }
+
+    .orb-one {
+
+        width: 350px;
+        height: 350px;
+
+        background: #00fff0;
+
+        top: -150px;
+        right: -100px;
+
+        animation:
+            floatOne 8s ease-in-out infinite;
+    }
+
+    .orb-two {
+
+        width: 300px;
+        height: 300px;
+
+        background: #7c3aed;
+
+        bottom: -150px;
+        left: -100px;
+
+        animation:
+            floatTwo 10s ease-in-out infinite;
+    }
+
+    @keyframes floatOne {
+
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(-60px, 50px);
+        }
+    }
+
+    @keyframes floatTwo {
+
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(50px, -50px);
+        }
     }
 
 
-    /* ==============================
-       SIDEBAR
-    ============================== */
+    /* ==================================================
+       DESKTOP SIDEBAR
+    ================================================== */
 
     .sidebar {
 
-      width: 220px;
-      min-width: 220px;
-      min-height: 100vh;
+        position: fixed;
 
-      background-color: #1b1b1b;
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
 
-      padding: 30px 20px;
+        width: 240px;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+        padding: 30px 20px;
 
-      color: white;
+        background:
+            rgba(15, 20, 32, 0.82);
 
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
+        border:
+            1px solid rgba(255,255,255,0.09);
 
-      z-index: 100;
+        border-radius: 20px;
+
+        backdrop-filter: blur(20px);
+
+        -webkit-backdrop-filter: blur(20px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        z-index: 100;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.35);
     }
 
 
-    /* ==============================
-       LOGO
-    ============================== */
+    /* ==================================================
+       PROFILE
+    ================================================== */
 
-    .logo {
-      text-align: center;
+    .profile {
+        text-align: center;
     }
 
-    .im {
+    .profile img {
 
-      width: 80px;
-      height: 80px;
+        width: 95px;
+        height: 95px;
 
-      object-fit: cover;
+        object-fit: cover;
 
-      border-radius: 50%;
+        border-radius: 50%;
 
-      display: block;
+        border:
+            3px solid #00fff0;
 
-      margin: 0 auto 10px;
+        padding: 3px;
+
+        margin-bottom: 12px;
+
+        box-shadow:
+            0 0 30px rgba(0,255,240,0.25);
+
+        transition: 0.4s;
     }
 
-    .logo-name {
+    .profile img:hover {
 
-      font-size: 20px;
+        transform:
+            scale(1.08)
+            rotate(3deg);
 
-      margin: 0 0 5px;
-
-      color: white;
+        box-shadow:
+            0 0 45px rgba(0,255,240,0.45);
     }
 
-    .logo small {
+    .profile h2 {
 
-      color: red;
+        font-size: 21px;
 
-      font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .profile span {
+
+        font-size: 12px;
+
+        color: #00fff0;
+
+        text-transform: uppercase;
+
+        letter-spacing: 3px;
     }
 
 
-    /* ==============================
+    /* ==================================================
        NAVIGATION
-    ============================== */
+    ================================================== */
 
-    .nav {
+    .navigation {
 
-      margin-top: 40px;
+        margin-top: 40px;
 
-      display: flex;
+        display: flex;
 
-      flex-direction: column;
+        flex-direction: column;
 
-      gap: 5px;
+        gap: 7px;
     }
 
-    .sidebar nav a {
+    .navigation a {
 
-      display: block;
+        display: flex;
 
-      color: #ccc;
+        align-items: center;
 
-      text-decoration: none;
+        gap: 12px;
 
-      padding: 10px;
+        padding: 13px 15px;
 
-      border-radius: 5px;
+        color: #9da5b5;
 
-      transition: 0.3s;
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        transition: 0.3s;
     }
 
-    .sidebar nav a:hover {
+    .navigation a:hover {
 
-      color: #00fff0;
+        color: #00fff0;
 
-      background: #292929;
+        background:
+            rgba(0,255,240,0.08);
+
+        transform:
+            translateX(5px);
     }
 
+    .navigation a.active {
 
-    /* ==============================
-       INTRO
-    ============================== */
+        color: #00fff0;
 
-    .intro {
+        background:
+            rgba(0,255,240,0.1);
 
-      width: calc(100% - 220px);
-
-      margin-left: 220px;
-
-      min-height: 100vh;
-
-      padding: 100px 50px;
-
-      background-image:
-        linear-gradient(
-          rgba(0, 0, 0, 0.35),
-          rgba(0, 0, 0, 0.35)
-        ),
-        url('https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg');
-
-      background-size: cover;
-
-      background-position: center;
-
-      background-attachment: fixed;
-
-      color: white;
+        border-left:
+            3px solid #00fff0;
     }
 
 
-    /* ==============================
-       HEADINGS
-    ============================== */
+    /* ==================================================
+       SIDEBAR BOTTOM
+    ================================================== */
 
-    .intro h1 {
+    .sidebar-bottom {
 
-      font-size: 3rem;
+        text-align: center;
 
-      line-height: 1.2;
+        color: #626b7c;
 
-      margin-bottom: 5px;
-    }
+        font-size: 11px;
 
-    .intro h2 {
-
-      font-size: 2.5rem;
-
-      line-height: 1.2;
-
-      margin-bottom: 20px;
-    }
-
-    .highlight {
-
-      text-shadow:
-        2px 2px 2px violet;
+        line-height: 1.7;
     }
 
 
-    /* ==============================
-       SUBTITLE
-    ============================== */
+    /* ==================================================
+       MAIN
+    ================================================== */
 
-    .sub {
+    .main {
 
-      font-size: 20px;
+        margin-left: 280px;
 
-      margin: 0 0 50px;
+        width:
+            calc(100% - 300px);
 
-      line-height: 1.5;
+        min-height: 100vh;
     }
 
 
-    /* ==============================
-       ABOUT
-    ============================== */
+    /* ==================================================
+       HERO
+    ================================================== */
 
-    .side {
+    .hero {
 
-      margin-left: 60px;
+        min-height: 100vh;
 
-      width: min(100%, 550px);
+        display: flex;
 
-      color: white;
-    }
+        align-items: center;
 
-    .side h3 {
+        padding:
+            80px 8%;
 
-      font-size: 30px;
+        position: relative;
 
-      margin-bottom: 15px;
-    }
+        background:
+            linear-gradient(
+                120deg,
+                rgba(5,7,13,0.96),
+                rgba(5,7,13,0.70)
+            ),
+            url("https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg");
 
-    .about-text {
+        background-size: cover;
 
-      font-size: 20px;
+        background-position: center;
 
-      line-height: 1.6;
-
-      margin: 0 0 20px;
-    }
-
-    .spam {
-
-      color: red;
-
-      font-weight: bold;
+        overflow: hidden;
     }
 
 
-    /* ==============================
-       CARDS
-    ============================== */
+    /* ==================================================
+       HERO CONTENT
+    ================================================== */
+
+    .hero-content {
+
+        max-width: 900px;
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+    .badge {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding: 8px 13px;
+
+        margin-bottom: 20px;
+
+        background:
+            rgba(0,255,240,0.08);
+
+        border:
+            1px solid rgba(0,255,240,0.2);
+
+        border-radius: 50px;
+
+        color: #00fff0;
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+    }
+
+    .status-dot {
+
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #00fff0;
+
+        box-shadow:
+            0 0 10px #00fff0;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(3rem, 7vw, 6.5rem);
+
+        line-height: 0.98;
+
+        font-weight: 800;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+
+        color: #00fff0;
+
+        text-shadow:
+            0 0 30px rgba(0,255,240,0.3);
+    }
+
+    .hero h2 {
+
+        font-size:
+            clamp(1.5rem, 3vw, 2.5rem);
+
+        color: #e4e7ed;
+
+        font-weight: 500;
+
+        margin-bottom: 22px;
+    }
+
+    .hero-description {
+
+        max-width: 680px;
+
+        color: #9ca5b5;
+
+        font-size:
+            clamp(1rem, 2vw, 1.15rem);
+
+        line-height: 1.8;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* ==================================================
+       BUTTONS
+    ================================================== */
+
+    .buttons {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        margin-bottom: 45px;
+    }
+
+    .button {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        padding:
+            13px 22px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+    }
+
+    .button-primary {
+
+        background: #00fff0;
+
+        color: #031011;
+
+        box-shadow:
+            0 0 25px rgba(0,255,240,0.18);
+    }
+
+    .button-primary:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 10px 35px rgba(0,255,240,0.3);
+    }
+
+    .button-secondary {
+
+        background:
+            rgba(255,255,255,0.05);
+
+        border:
+            1px solid rgba(255,255,255,0.12);
+
+        color: white;
+    }
+
+    .button-secondary:hover {
+
+        background:
+            rgba(255,255,255,0.1);
+
+        transform:
+            translateY(-4px);
+    }
+
+
+    /* ==================================================
+       STATISTICS
+    ================================================== */
+
+    .stats {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(130px, 170px));
+
+        gap: 12px;
+    }
+
+    .stat {
+
+        padding: 17px;
+
+        background:
+            rgba(255,255,255,0.045);
+
+        border:
+            1px solid rgba(255,255,255,0.08);
+
+        border-radius: 12px;
+
+        backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+
+        display: block;
+
+        color: #00fff0;
+
+        font-size: 23px;
+
+        margin-bottom: 4px;
+    }
+
+    .stat small {
+
+        color: #747d8e;
+
+        font-size: 11px;
+    }
+
+
+    /* ==================================================
+       ABOUT SECTION
+    ================================================== */
+
+    .about {
+
+        padding:
+            100px 8%;
+
+        background:
+            rgba(8,11,18,0.92);
+    }
+
+    .section-tag {
+
+        color: #00fff0;
+
+        text-transform: uppercase;
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 10px;
+    }
+
+    .about h2 {
+
+        font-size:
+            clamp(2rem, 4vw, 3.2rem);
+
+        margin-bottom: 15px;
+    }
+
+    .about-intro {
+
+        max-width: 700px;
+
+        color: #929aaa;
+
+        line-height: 1.8;
+
+        margin-bottom: 40px;
+    }
+
+
+    /* ==================================================
+       SKILLS GRID
+    ================================================== */
+
+    .skills {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .skill {
+
+        padding:
+            24px 12px;
+
+        text-align: center;
+
+        background:
+            rgba(255,255,255,0.035);
+
+        border:
+            1px solid rgba(255,255,255,0.08);
+
+        border-radius: 14px;
+
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+
+        transform:
+            translateY(-7px);
+
+        border-color:
+            rgba(0,255,240,0.4);
+
+        background:
+            rgba(0,255,240,0.05);
+    }
+
+    .skill-icon {
+
+        font-size: 28px;
+
+        margin-bottom: 10px;
+    }
+
+    .skill h3 {
+
+        font-size: 14px;
+
+        margin-bottom: 5px;
+    }
+
+    .skill p {
+
+        color: #727b8c;
+
+        font-size: 11px;
+    }
+
+
+    /* ==================================================
+       ABOUT CARDS
+    ================================================== */
+
+    .cards {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
 
     .card {
 
-      width: 100%;
+        padding: 18px;
 
-      margin: 8px 0;
+        display: flex;
 
-      padding: 10px 12px;
+        align-items: center;
 
-      background: rgba(103, 103, 103, 0.9);
+        gap: 12px;
 
-      border-radius: 5px;
+        background:
+            rgba(255,255,255,0.03);
 
-      font-size: 16px;
+        border:
+            1px solid rgba(255,255,255,0.07);
 
-      transition: 0.3s;
+        border-radius: 12px;
+
+        color: #d8dce5;
+
+        font-size: 14px;
+
+        transition: 0.3s;
     }
 
     .card:hover {
 
-      transform: translateX(5px);
+        transform:
+            translateY(-4px);
 
-      background: rgba(80, 80, 80, 0.95);
+        border-color:
+            rgba(0,255,240,0.3);
+    }
+
+    .card-icon {
+
+        font-size: 22px;
+
+        flex-shrink: 0;
     }
 
 
-    /* ==============================
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+
+        padding:
+            25px 8%;
+
+        text-align: center;
+
+        color: #596171;
+
+        background: #05070d;
+
+        border-top:
+            1px solid rgba(255,255,255,0.06);
+
+        font-size: 12px;
+    }
+
+    footer span {
+
+        color: #00fff0;
+    }
+
+
+    /* ==================================================
        TABLET
-       769px - 1000px
-    ============================== */
+    ================================================== */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
 
-      .sidebar {
+        .sidebar {
 
-        width: 190px;
+            width: 210px;
+        }
 
-        min-width: 190px;
+        .main {
 
-        padding: 25px 15px;
-      }
+            margin-left: 240px;
 
-      .intro {
+            width:
+                calc(100% - 260px);
+        }
 
-        width: calc(100% - 190px);
+        .skills {
 
-        margin-left: 190px;
+            grid-template-columns:
+                repeat(3, 1fr);
+        }
 
-        padding: 80px 35px;
-
-        background-attachment: scroll;
-      }
-
-      .intro h1 {
-
-        font-size: 2.7rem;
-      }
-
-      .intro h2 {
-
-        font-size: 2.2rem;
-      }
-
-      .side {
-
-        margin-left: 30px;
-
-        width: min(100%, 500px);
-      }
-
-      .about-text {
-
-        font-size: 18px;
-      }
     }
 
 
-    /* ==============================
+    /* ==================================================
        SMALL TABLET
-       601px - 768px
-    ============================== */
+    ================================================== */
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
 
-      .sidebar {
+        .sidebar {
 
-        width: 170px;
+            position: relative;
 
-        min-width: 170px;
+            left: auto;
+            top: auto;
+            bottom: auto;
 
-        padding: 20px 12px;
-      }
+            width: 100%;
 
-      .intro {
+            height: auto;
 
-        width: calc(100% - 170px);
+            border-radius: 0;
 
-        margin-left: 170px;
+            padding:
+                20px 15px;
 
-        padding: 70px 25px;
-      }
+            border:
+                none;
 
-      .im {
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
 
-        width: 65px;
+        .page {
 
-        height: 65px;
-      }
+            display: block;
+        }
 
-      .logo-name {
+        .main {
 
-        font-size: 18px;
-      }
+            margin-left: 0;
 
-      .sidebar nav a {
+            width: 100%;
+        }
 
-        font-size: 14px;
+        .profile {
 
-        padding: 9px 8px;
-      }
+            margin-bottom: 18px;
+        }
 
-      .intro h1 {
+        .profile img {
 
-        font-size: 2.3rem;
-      }
+            width: 70px;
+            height: 70px;
+        }
 
-      .intro h2 {
+        .navigation {
 
-        font-size: 1.9rem;
-      }
+            flex-direction: row;
 
-      .sub {
+            flex-wrap: wrap;
 
-        font-size: 17px;
+            justify-content: center;
 
-        margin-bottom: 35px;
-      }
+            margin-top: 10px;
+        }
 
-      .side {
+        .navigation a {
 
-        margin-left: 10px;
+            padding:
+                9px 12px;
 
-        width: min(100%, 450px);
-      }
+            font-size: 12px;
+        }
 
-      .side h3 {
+        .sidebar-bottom {
 
-        font-size: 26px;
-      }
+            display: none;
+        }
 
-      .about-text {
+        .hero {
 
-        font-size: 17px;
-      }
+            min-height: auto;
 
-      .card {
+            padding:
+                90px 7%;
+        }
 
-        font-size: 15px;
-      }
+        .skills {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
     }
 
 
-    /* ==============================
+    /* ==================================================
        MOBILE
-       600px AND BELOW
-    ============================== */
+    ================================================== */
 
     @media (max-width: 600px) {
 
-      .page {
+        .sidebar {
 
-        display: block;
-      }
+            padding:
+                18px 12px;
+        }
 
+        .profile img {
 
-      /* SIDEBAR → TOP NAVIGATION */
+            width: 65px;
+            height: 65px;
+        }
 
-      .sidebar {
+        .profile h2 {
 
-        position: relative;
+            font-size: 18px;
+        }
 
-        width: 100%;
+        .navigation {
 
-        min-width: 100%;
+            display: grid;
 
-        min-height: auto;
+            grid-template-columns:
+                repeat(3, 1fr);
 
-        padding: 20px 12px;
+            gap: 5px;
+        }
 
-        display: block;
-      }
+        .navigation a {
 
+            justify-content: center;
 
-      .logo {
+            text-align: center;
 
-        margin-bottom: 15px;
-      }
+            padding:
+                10px 5px;
 
-      .im {
+            font-size: 11px;
+        }
 
-        width: 70px;
 
-        height: 70px;
-      }
+        /* HERO */
 
-      .logo-name {
+        .hero {
 
-        font-size: 19px;
-      }
+            padding:
+                70px 20px;
 
+            min-height:
+                calc(100vh - 180px);
 
-      /* MOBILE NAV */
+            background-attachment:
+                scroll;
+        }
 
-      .nav {
+        .badge {
 
-        margin-top: 15px;
+            font-size: 10px;
 
-        display: flex;
+            padding:
+                7px 10px;
+        }
 
-        flex-direction: row;
+        .hero h1 {
 
-        flex-wrap: wrap;
+            font-size:
+                clamp(2.7rem, 14vw, 4rem);
 
-        justify-content: center;
+            letter-spacing:
+                -2px;
+        }
 
-        gap: 5px;
-      }
+        .hero h2 {
 
-      .sidebar nav a {
+            font-size:
+                1.4rem;
 
-        padding: 9px 12px;
+            line-height:
+                1.4;
+        }
 
-        font-size: 14px;
-      }
+        .hero-description {
 
+            font-size:
+                15px;
 
-      /* INTRO */
+            line-height:
+                1.7;
+        }
 
-      .intro {
 
-        width: 100%;
+        /* BUTTONS */
 
-        margin-left: 0;
+        .buttons {
 
-        min-height: calc(100vh - 180px);
+            flex-direction:
+                column;
 
-        padding: 60px 20px;
+            width:
+                100%;
+        }
 
-        background-attachment: scroll;
+        .button {
 
-        background-position: center;
-      }
+            width:
+                100%;
+        }
 
 
-      .intro h1 {
+        /* STATS */
 
-        font-size: 2.1rem;
-      }
+        .stats {
 
-      .intro h2 {
+            grid-template-columns:
+                repeat(3, 1fr);
 
-        font-size: 1.7rem;
+            gap: 6px;
+        }
 
-        margin-bottom: 15px;
-      }
+        .stat {
 
+            padding:
+                12px 7px;
 
-      .sub {
+            text-align:
+                center;
+        }
 
-        font-size: 16px;
+        .stat strong {
 
-        margin-bottom: 40px;
-      }
+            font-size:
+                18px;
+        }
 
+        .stat small {
 
-      /* ABOUT */
+            font-size:
+                9px;
+        }
 
-      .side {
 
-        margin-left: 0;
+        /* ABOUT */
 
-        width: 100%;
-      }
+        .about {
 
-      .side h3 {
+            padding:
+                70px 20px;
+        }
 
-        font-size: 25px;
+        .about h2 {
 
-        margin-bottom: 12px;
-      }
+            font-size:
+                2rem;
+        }
 
-      .about-text {
+        .about-intro {
 
-        font-size: 16px;
+            font-size:
+                14px;
 
-        line-height: 1.6;
+            line-height:
+                1.7;
+        }
 
-        margin-bottom: 20px;
-      }
 
+        /* SKILLS */
 
-      /* CARDS */
+        .skills {
 
-      .card {
+            grid-template-columns:
+                repeat(2, 1fr);
 
-        width: 100%;
+            gap: 8px;
+        }
 
-        margin: 8px 0;
+        .skill {
 
-        padding: 11px;
+            padding:
+                20px 8px;
+        }
 
-        font-size: 14px;
-      }
+
+        /* CARDS */
+
+        .cards {
+
+            grid-template-columns:
+                1fr;
+        }
+
+        .card {
+
+            font-size:
+                13px;
+
+            padding:
+                15px;
+        }
 
     }
 
 
-    /* ==============================
-       SMALL PHONES
-       380px AND BELOW
-    ============================== */
+    /* ==================================================
+       VERY SMALL MOBILE
+    ================================================== */
 
     @media (max-width: 380px) {
 
-      .sidebar {
+        .navigation {
 
-        padding: 15px 8px;
-      }
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
 
-      .im {
+        .hero {
 
-        width: 60px;
+            padding:
+                55px 15px;
+        }
 
-        height: 60px;
-      }
+        .hero h1 {
 
-      .logo-name {
+            font-size:
+                2.5rem;
+        }
 
-        font-size: 17px;
-      }
+        .stats {
 
-      .logo small {
+            grid-template-columns:
+                1fr;
+        }
 
-        font-size: 12px;
-      }
+        .stat {
 
+            display:
+                flex;
 
-      .nav {
+            align-items:
+                center;
 
-        gap: 3px;
-      }
+            justify-content:
+                space-between;
 
-      .sidebar nav a {
+            text-align:
+                left;
+        }
 
-        font-size: 12px;
+        .skills {
 
-        padding: 8px 9px;
-      }
-
-
-      .intro {
-
-        padding: 50px 15px;
-      }
-
-      .intro h1 {
-
-        font-size: 1.8rem;
-      }
-
-      .intro h2 {
-
-        font-size: 1.45rem;
-      }
-
-      .sub {
-
-        font-size: 14px;
-      }
-
-      .side h3 {
-
-        font-size: 22px;
-      }
-
-      .about-text {
-
-        font-size: 15px;
-      }
-
-      .card {
-
-        font-size: 13px;
-
-        padding: 10px;
-      }
+            grid-template-columns:
+                1fr;
+        }
 
     }
 
-  </style>
+</style>
+
 
 </head>
 
 <body>
 
+<!-- ==================================================
+     BACKGROUND
+================================================== -->
+
+<div class="background">
+
+
+<div class="orb orb-one"></div>
+
+<div class="orb orb-two"></div>
+
+
+</div>
+
+<!-- ==================================================
+     PAGE
+================================================== -->
+
 <div class="page">
 
-  <!-- ============================
-       SIDEBAR
-  ============================= -->
 
-  <aside class="sidebar">
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
 
-<div>
-
-
-  <div class="logo">
-
-   
-    <p class="logo-name">
-      M. Ramesh
-    </p>
-
-    <small>
-      Developer
-    </small>
-
-  </div>
+<aside class="sidebar">
 
 
-  <nav class="nav">
-
-    <a href="about.html">
-      About
-    </a>
-
-    <a href="work.html">
-      Work
-    </a>
-
-    <a href="resum.html">
-      Resum
-    </a>
-
-    <a href="contact.html">
-      Contact
-    </a>
-
-    <a href="project.html">
-      Projects
-    </a>
-
-  </nav>
-
-</div>
-
-  </aside>
-
-  <!-- ============================
-       INTRO
-  ============================= -->
-
-  <section class="intro">
-
-<h1>
-  Hi, I'm
-  <span class="highlight">
-    Ramesh
-  </span>
-</h1>
+    <div>
 
 
-<h2>
-  Web Developer
-</h2>
+        <!-- PROFILE -->
+
+        <div class="profile">
+
+        
+            <h2>
+                M. Ramesh
+            </h2>
+
+            <span>
+                Developer
+            </span>
+
+        </div>
 
 
-<p class="sub">
-  Front End Developer / Programming Enthusiast
-</p>
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                🏠 Home
+            </a>
+
+            <a href="about.html">
+                👤 About
+            </a>
+
+            <a href="work.html">
+                💼 Work
+            </a>
+
+            <a href="resum.html">
+                📄 Resume
+            </a>
+
+            <a href="project.html">
+                🚀 Projects
+            </a>
+
+            <a href="contact.html">
+                📩 Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <div class="sidebar-bottom">
+
+        <p>
+            © 2026 M. Ramesh
+        </p>
+
+        <p>
+            Web Developer
+        </p>
+
+    </div>
+
+
+</aside>
 
 
 
-<!-- ABOUT -->
+<!-- ==================================================
+     MAIN
+================================================== -->
 
-<div class="side">
-
-
-  <h3>
-    About Me
-  </h3>
+<main class="main">
 
 
-  <p class="about-text">
+    <!-- ==================================================
+         HERO
+    ================================================== -->
 
-    I’m currently pursuing a BCA degree.
-    I'm passionate about web development
-    and learning
-    <span class="spam">
-      HTML, CSS, JavaScript
-    </span>.
-
-  </p>
+    <section class="hero">
 
 
-  <div class="card">
-    🔥 Programming Enthusiast
-  </div>
+        <div class="hero-content">
 
 
-  <div class="card">
-    💻 Frontend & Backend Developer
-  </div>
+            <div class="badge">
+
+                <span class="status-dot"></span>
+
+                AVAILABLE FOR PROJECTS
+
+            </div>
 
 
-  <div class="card">
-    🎓 BCA Student
-  </div>
+            <h1>
+
+                Hi, I'm
+                <span>
+                    Ramesh
+                </span>
+
+            </h1>
 
 
-  <div class="card">
-    📊 Data Structures and Algorithms
-  </div>
+            <h2>
+                Web Developer & Programming Enthusiast
+            </h2>
 
 
-  <div class="card">
-    ⚙️ Software Engineering
-  </div>
+            <p class="hero-description">
+
+                I'm currently pursuing a BCA degree
+                and passionate about building modern
+                websites, applications and software.
+                I enjoy learning new technologies and
+                turning ideas into real-world projects.
+
+            </p>
 
 
-</div>
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+                <a
+                    href="project.html"
+                    class="button button-primary"
+                >
+                    🚀 View Projects
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="button button-secondary"
+                >
+                    📩 Contact Me
+                </a>
+
+            </div>
 
 
-  </section>
+            <!-- STATS -->
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <strong>
+                        BCA
+                    </strong>
+
+                    <small>
+                        Student
+                    </small>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        WEB
+                    </strong>
+
+                    <small>
+                        Development
+                    </small>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        AI
+                    </strong>
+
+                    <small>
+                        Projects
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ABOUT
+    ================================================== -->
+
+    <section class="about">
+
+
+        <div class="section-tag">
+            About Me
+        </div>
+
+
+        <h2>
+            Building. Learning. Creating.
+        </h2>
+
+
+        <p class="about-intro">
+
+            I’m currently pursuing a BCA degree and
+            developing my skills in web development,
+            programming and software engineering.
+            My goal is to continuously learn,
+            experiment and build useful real-world
+            applications.
+
+        </p>
+
+
+        <!-- SKILLS -->
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Structure
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Design
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    Logic
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Programming
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI / ML
+                </h3>
+
+                <p>
+                    Intelligence
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FEATURE CARDS -->
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    🔥
+                </span>
+
+                <span>
+                    Programming Enthusiast
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    💻
+                </span>
+
+                <span>
+                    Frontend & Backend Developer
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    🎓
+                </span>
+
+                <span>
+                    BCA Student
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    📊
+                </span>
+
+                <span>
+                    Data Structures & Algorithms
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Software Engineering
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-icon">
+                    🚀
+                </span>
+
+                <span>
+                    Real-World Projects
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        © 2026
+        <span>
+            M. Ramesh
+        </span>
+        — Web Developer
+
+    </footer>
+
+
+</main>
+
 
 </div>
 
