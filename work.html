@@ -1,51 +1,1223 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Student Profile</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-image: url('https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?cs=srgb&dl=pexels-pixabay-269077.jpg&fm=jpg'); /* Example background */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      padding: 20px;
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="M. Ramesh - BCA Student Profile"
+>
+
+<title>Student Profile | M. Ramesh</title>
+
+
+<style>
+
+    /* =====================================================
+       PROFESSIONAL COLOR SYSTEM
+    ===================================================== */
+
+    :root {
+
+        --bg: #0B1120;
+
+        --panel: rgba(11, 17, 32, 0.78);
+
+        --panel-light: rgba(17, 24, 39, 0.72);
+
+        --primary: #3B82F6;
+
+        --primary-dark: #2563EB;
+
+        --secondary: #6366F1;
+
+        --accent: #38BDF8;
+
+        --text: #F8FAFC;
+
+        --text-secondary: #CBD5E1;
+
+        --muted: #CBD5E1;
+
+        --border: rgba(255, 255, 255, 0.15);
+
     }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
+    }
+
+
+    html {
+
+        scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+        font-family:
+            "Segoe UI",
+            Arial,
+            sans-serif;
+
+        color:
+            var(--text);
+
+        min-height:
+            100vh;
+
+        overflow-x:
+            hidden;
+
+    }
+
+
+    /* =====================================================
+       ORIGINAL BACKGROUND
+    ===================================================== */
+
+    .background {
+
+        position:
+            fixed;
+
+        inset:
+            0;
+
+        z-index:
+            -2;
+
+        background-image:
+            url(
+                "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?cs=srgb&dl=pexels-pixabay-269077.jpg&fm=jpg"
+            );
+
+        background-size:
+            cover;
+
+        background-position:
+            center;
+
+        background-repeat:
+            no-repeat;
+
+        background-attachment:
+            fixed;
+
+    }
+
+
+    /* Light professional overlay */
+
+    .background::after {
+
+        content:
+            "";
+
+        position:
+            absolute;
+
+        inset:
+            0;
+
+        background:
+            rgba(11, 17, 32, 0.35);
+
+    }
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    .page {
+
+        min-height:
+            100vh;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        padding:
+            60px 20px;
+
+    }
+
+
+    /* =====================================================
+       PROFILE CONTAINER
+    ===================================================== */
 
     .profile {
-      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for better readability */
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        width:
+            100%;
+
+        max-width:
+            850px;
+
+        padding:
+            42px;
+
+        background:
+            rgba(11, 17, 32, 0.78);
+
+        border:
+            1px solid rgba(255,255,255,0.16);
+
+        border-radius:
+            20px;
+
+        backdrop-filter:
+            blur(12px);
+
+        -webkit-backdrop-filter:
+            blur(12px);
+
+        box-shadow:
+            0 25px 70px rgba(0,0,0,0.42);
+
+        position:
+            relative;
+
+        overflow:
+            hidden;
+
     }
+
+
+    /* Decorative glow */
+
+    .profile::before {
+
+        content:
+            "";
+
+        position:
+            absolute;
+
+        width:
+            280px;
+
+        height:
+            280px;
+
+        border-radius:
+            50%;
+
+        background:
+            rgba(59,130,246,0.12);
+
+        filter:
+            blur(70px);
+
+        top:
+            -160px;
+
+        right:
+            -100px;
+
+        pointer-events:
+            none;
+
+    }
+
+
+    .profile::after {
+
+        content:
+            "";
+
+        position:
+            absolute;
+
+        width:
+            220px;
+
+        height:
+            220px;
+
+        border-radius:
+            50%;
+
+        background:
+            rgba(99,102,241,0.09);
+
+        filter:
+            blur(70px);
+
+        bottom:
+            -150px;
+
+        left:
+            -100px;
+
+        pointer-events:
+            none;
+
+    }
+
+
+    .content {
+
+        position:
+            relative;
+
+        z-index:
+            2;
+
+    }
+
+
+    /* =====================================================
+       TOP BADGE
+    ===================================================== */
+
+    .badge {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        gap:
+            8px;
+
+        padding:
+            7px 12px;
+
+        margin-bottom:
+            20px;
+
+        color:
+            var(--accent);
+
+        background:
+            rgba(56,189,248,0.08);
+
+        border:
+            1px solid rgba(56,189,248,0.20);
+
+        border-radius:
+            50px;
+
+        font-size:
+            10px;
+
+        font-weight:
+            600;
+
+        letter-spacing:
+            1.7px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .dot {
+
+        width:
+            7px;
+
+        height:
+            7px;
+
+        border-radius:
+            50%;
+
+        background:
+            var(--accent);
+
+        box-shadow:
+            0 0 10px rgba(56,189,248,0.65);
+
+    }
+
+
+    /* =====================================================
+       HEADING
+    ===================================================== */
 
     h1 {
-      color: rgb(221, 11, 221);
+
+        color:
+            var(--text);
+
+        font-size:
+            clamp(2.3rem, 6vw, 4.2rem);
+
+        line-height:
+            1.05;
+
+        letter-spacing:
+            -2px;
+
+        margin-bottom:
+            10px;
+
     }
 
-    p {
-      font-size: 16px;
-      color: #333;
+
+    h1 span {
+
+        color:
+            var(--primary);
+
     }
+
+
+    .subtitle {
+
+        color:
+            var(--text-secondary);
+
+        font-size:
+            clamp(1rem, 2vw, 1.25rem);
+
+        margin-bottom:
+            30px;
+
+    }
+
+
+    /* =====================================================
+       DIVIDER
+    ===================================================== */
+
+    .divider {
+
+        width:
+            60px;
+
+        height:
+            3px;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--primary),
+                var(--accent)
+            );
+
+        border-radius:
+            5px;
+
+        margin-bottom:
+            28px;
+
+    }
+
+
+    /* =====================================================
+       PARAGRAPHS
+    ===================================================== */
+
+    .profile p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            15px;
+
+        line-height:
+            1.85;
+
+        margin-bottom:
+            18px;
+
+    }
+
 
     .highlight {
-      color: red;
-      font-weight: bold;
+
+        color:
+            var(--accent);
+
+        font-weight:
+            650;
+
     }
-  </style>
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ===================================================== */
+
+    .info-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            10px;
+
+        margin-top:
+            30px;
+
+    }
+
+
+    .info-card {
+
+        padding:
+            18px;
+
+        background:
+            rgba(255,255,255,0.035);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            11px;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .info-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        background:
+            rgba(59,130,246,0.08);
+
+        border-color:
+            rgba(59,130,246,0.28);
+
+    }
+
+
+    .info-icon {
+
+        font-size:
+            22px;
+
+        margin-bottom:
+            9px;
+
+    }
+
+
+    .info-card small {
+
+        display:
+            block;
+
+        color:
+            var(--muted);
+
+        font-size:
+            9px;
+
+        text-transform:
+            uppercase;
+
+        letter-spacing:
+            1.2px;
+
+        margin-bottom:
+            4px;
+
+    }
+
+
+    .info-card strong {
+
+        color:
+            var(--text);
+
+        font-size:
+            13px;
+
+    }
+
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-title {
+
+        margin-top:
+            32px;
+
+        margin-bottom:
+            13px;
+
+        color:
+            var(--text-secondary);
+
+        font-size:
+            11px;
+
+        font-weight:
+            600;
+
+        letter-spacing:
+            1.5px;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .skills {
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px;
+
+    }
+
+
+    .skill {
+
+        padding:
+            8px 13px;
+
+        color:
+            var(--text-secondary);
+
+        background:
+            rgba(59,130,246,0.07);
+
+        border:
+            1px solid rgba(59,130,246,0.20);
+
+        border-radius:
+            7px;
+
+        font-size:
+            11px;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .skill:hover {
+
+        color:
+            white;
+
+        background:
+            rgba(59,130,246,0.16);
+
+        border-color:
+            rgba(59,130,246,0.4);
+
+    }
+
+
+    /* =====================================================
+       OPPORTUNITY BOX
+    ===================================================== */
+
+    .opportunity {
+
+        margin-top:
+            30px;
+
+        padding:
+            18px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(59,130,246,0.10),
+                rgba(99,102,241,0.08)
+            );
+
+        border:
+            1px solid rgba(59,130,246,0.20);
+
+        border-radius:
+            11px;
+
+    }
+
+
+    .opportunity-title {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            9px;
+
+        color:
+            var(--text);
+
+        font-size:
+            13px;
+
+        font-weight:
+            650;
+
+        margin-bottom:
+            6px;
+
+    }
+
+
+    .opportunity p {
+
+        margin:
+            0;
+
+        font-size:
+            12px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .buttons {
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            10px;
+
+        margin-top:
+            25px;
+
+    }
+
+
+    .button {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        padding:
+            11px 20px;
+
+        border-radius:
+            8px;
+
+        font-size:
+            12px;
+
+        font-weight:
+            600;
+
+        transition:
+            0.25s;
+
+    }
+
+
+    .primary {
+
+        color:
+            white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-dark)
+            );
+
+        box-shadow:
+            0 8px 25px
+            rgba(37,99,235,0.20);
+
+    }
+
+
+    .primary:hover {
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 12px 30px
+            rgba(37,99,235,0.35);
+
+    }
+
+
+    .secondary {
+
+        color:
+            var(--text-secondary);
+
+        background:
+            rgba(255,255,255,0.04);
+
+        border:
+            1px solid var(--border);
+
+    }
+
+
+    .secondary:hover {
+
+        color:
+            white;
+
+        background:
+            rgba(255,255,255,0.09);
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+        .page {
+
+            padding:
+                40px 15px;
+
+        }
+
+
+        .profile {
+
+            padding:
+                30px;
+
+        }
+
+
+        .info-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 500px) {
+
+        .background {
+
+            background-attachment:
+                scroll;
+
+        }
+
+
+        .page {
+
+            padding:
+                25px 12px;
+
+            align-items:
+                flex-start;
+
+        }
+
+
+        .profile {
+
+            padding:
+                24px 19px;
+
+            border-radius:
+                15px;
+
+        }
+
+
+        h1 {
+
+            font-size:
+                2.5rem;
+
+            letter-spacing:
+                -1.5px;
+
+        }
+
+
+        .subtitle {
+
+            font-size:
+                15px;
+
+        }
+
+
+        .profile p {
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        .info-grid {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .info-card {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+        }
+
+
+        .info-icon {
+
+            margin:
+                0;
+
+        }
+
+
+        .info-card small {
+
+            margin-bottom:
+                2px;
+
+        }
+
+
+        .buttons {
+
+            flex-direction:
+                column;
+
+        }
+
+
+        .button {
+
+            width:
+                100%;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 350px) {
+
+        .profile {
+
+            padding:
+                20px 15px;
+
+        }
+
+
+        h1 {
+
+            font-size:
+                2.2rem;
+
+        }
+
+
+        .badge {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                1.2px;
+
+        }
+
+    }
+
+</style>
+```
+
 </head>
+
 <body>
-  
-  <div class="profile">
-    <h1>Hello, I'm Ramesh</h1>
-    <p>I’m currently a college student studying <span class="highlight">BCA (Bachelor of Computer Applications)</span>. I'm passionate about programming and actively learning languages like Python, C, C++, Java, and web technologies such as HTML, CSS, and JavaScript.</p>
-    <p>I'm looking for opportunities like internships, freelance work, or part-time roles where I can apply my skills and gain real-world experience in software development or web design.</p>
-  </div>
-  
+
+```
+<!-- =================================================
+     ORIGINAL BACKGROUND
+================================================= -->
+
+<div class="background"></div>
+
+
+
+<!-- =================================================
+     PAGE
+================================================= -->
+
+<main class="page">
+
+
+    <section class="profile">
+
+
+        <div class="content">
+
+
+            <!-- STATUS -->
+
+            <div class="badge">
+
+                <span class="dot"></span>
+
+                Student Profile
+
+            </div>
+
+
+
+            <!-- TITLE -->
+
+            <h1>
+
+                Hello, I'm
+                <span>
+                    Ramesh
+                </span>
+
+            </h1>
+
+
+            <div class="subtitle">
+
+                BCA Student • Programmer • Future Developer
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+
+            <!-- INTRODUCTION -->
+
+            <p>
+
+                I’m currently a college student studying
+                <span class="highlight">
+                    BCA (Bachelor of Computer Applications)
+                </span>.
+
+                I'm passionate about programming and
+                actively learning different programming
+                languages and modern web technologies.
+
+            </p>
+
+
+            <p>
+
+                My current learning journey includes
+                <span class="highlight">
+                    Python, C, C++, Java, HTML, CSS,
+                    and JavaScript
+                </span>.
+
+                I enjoy experimenting with new technologies
+                and building projects that help me improve
+                my practical development skills.
+
+            </p>
+
+
+            <p>
+
+                I'm looking for opportunities such as
+                <span class="highlight">
+                    internships, freelance work,
+                    or part-time roles
+                </span>
+
+                where I can apply my knowledge, gain
+                real-world experience and contribute to
+                software development or web design projects.
+
+            </p>
+
+
+
+            <!-- =================================================
+                 INFORMATION
+            ================================================= -->
+
+            <div class="info-grid">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Education
+                        </small>
+
+                        <strong>
+                            BCA Student
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        💻
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Focus
+                        </small>
+
+                        <strong>
+                            Software Development
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🌐
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Interest
+                        </small>
+
+                        <strong>
+                            Web Development
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SKILLS
+            ================================================= -->
+
+           
+
+
+    </section>
+
+
+</main>
+```
+
 </body>
+
 </html>
