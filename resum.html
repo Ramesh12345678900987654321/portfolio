@@ -1,52 +1,793 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="M. Ramesh - Resume"
+>
+
+<title>Resume | M. Ramesh</title>
+
+
 <style>
-    body{
-        background-color: rgba(52, 52, 52, 0.964);
+
+    /* =====================================================
+       PROFESSIONAL COLOR SYSTEM
+    ===================================================== */
+
+    :root {
+
+        --bg: #0B1120;
+
+        --panel: rgba(11, 17, 32, 0.82);
+
+        --primary: #3B82F6;
+
+        --primary-dark: #2563EB;
+
+        --secondary: #6366F1;
+
+        --accent: #38BDF8;
+
+        --text: #F8FAFC;
+
+        --text-secondary: #CBD5E1;
+
+        --muted: #94A3B8;
+
+        --border: rgba(255, 255, 255, 0.15);
+
     }
 
-.containner{
-    height: auto;
-    width: auto;
-  margin-left: 10cm;
-}
-  .download-btn{
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 25px;
-        background-color: #28a745;
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
+    }
+
+
+    html {
+
+        scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+        font-family:
+            "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+
+        min-height: 100vh;
+
+        color: var(--text);
+
+        overflow-x: hidden;
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND
+    ===================================================== */
+
+    .background {
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: -2;
+
+        background:
+            linear-gradient(
+                rgba(11, 17, 32, 0.48),
+                rgba(11, 17, 32, 0.48)
+            ),
+            url("images/background_image.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        background-attachment: fixed;
+
+    }
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    .page {
+
+        min-height: 100vh;
+
+        padding:
+            45px 20px 35px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .header {
+
+        width: 100%;
+
+        max-width: 1000px;
+
+        text-align: center;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .tag {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding:
+            7px 13px;
+
+        margin-bottom: 12px;
+
+        color: var(--accent);
+
+        background:
+            rgba(56, 189, 248, 0.08);
+
+        border:
+            1px solid rgba(56, 189, 248, 0.20);
+
+        border-radius: 50px;
+
+        font-size: 10px;
+
+        font-weight: 600;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .dot {
+
+        width: 7px;
+
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: var(--accent);
+
+        box-shadow:
+            0 0 10px
+            rgba(56, 189, 248, 0.7);
+
+    }
+
+
+    .header h1 {
+
+        font-size:
+            clamp(2.3rem, 6vw, 4rem);
+
+        line-height: 1.05;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .header h1 span {
+
+        color: var(--primary);
+
+    }
+
+
+    .header p {
+
+        color: var(--text-secondary);
+
+        font-size: 13px;
+
+    }
+
+
+    /* =====================================================
+       RESUME CONTAINER
+    ===================================================== */
+
+    .resume-container {
+
+        width: 100%;
+
+        max-width: 1000px;
+
+        padding: 20px;
+
+        background:
+            rgba(11, 17, 32, 0.80);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 20px;
+
+        backdrop-filter: blur(12px);
+
+        -webkit-backdrop-filter: blur(12px);
+
+        box-shadow:
+            0 25px 70px
+            rgba(0, 0, 0, 0.45);
+
+    }
+
+
+    /* =====================================================
+       RESUME IMAGE AREA
+    ===================================================== */
+
+    .resume-wrapper {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        border-radius: 12px;
+
+        background:
+            rgba(255, 255, 255, 0.04);
+
+        border:
+            1px solid rgba(255,255,255,0.10);
+
+        padding: 10px;
+
+    }
+
+
+    .resume-image {
+
+        display: block;
+
+        width: 100%;
+
+        max-width: 850px;
+
+        height: auto;
+
+        border-radius: 6px;
+
+        border:
+            2px solid rgba(148,163,184,0.35);
+
+        box-shadow:
+            0 15px 40px
+            rgba(0,0,0,0.35);
+
+    }
+
+
+    /* =====================================================
+       DOWNLOAD SECTION
+    ===================================================== */
+
+    .download-section {
+
+        text-align: center;
+
+        margin-top: 22px;
+
+    }
+
+
+    .download-section p {
+
+        color: var(--muted);
+
+        font-size: 12px;
+
+        margin-bottom: 13px;
+
+    }
+
+
+    .download-btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 9px;
+
+        padding:
+            12px 23px;
+
         color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-dark)
+            );
+
+        border-radius: 8px;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
         text-decoration: none;
-        margin-left: 30cm;
-        font-size: 18px;
-        border-radius: 5px;
+
+        transition: 0.25s;
+
+        box-shadow:
+            0 8px 25px
+            rgba(37,99,235,0.22);
+
     }
 
-    .download-btn:hover{
-        background-color: #218838;
+
+    .download-btn:hover {
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 12px 30px
+            rgba(37,99,235,0.35);
+
     }
-img{
-    border-color: rgb(84, 84, 84);
-    border-style:solid;
-  border-width: 2px;
-  width: 15cm;
-}
+
+
+    /* =====================================================
+       BACK BUTTON
+    ===================================================== */
+
+    .back-btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        margin-top: 10px;
+
+        padding:
+            10px 18px;
+
+        color: var(--text-secondary);
+
+        background:
+            rgba(255,255,255,0.04);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 8px;
+
+        font-size: 11px;
+
+        transition: 0.25s;
+
+    }
+
+
+    .back-btn:hover {
+
+        color: white;
+
+        background:
+            rgba(255,255,255,0.08);
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+        width: 100%;
+
+        max-width: 1000px;
+
+        text-align: center;
+
+        padding-top: 20px;
+
+        color:
+            rgba(255,255,255,0.55);
+
+        font-size: 10px;
+
+    }
+
+
+    footer span {
+
+        color: var(--accent);
+
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+        .page {
+
+            padding:
+                35px 15px 25px;
+
+        }
+
+
+        .resume-container {
+
+            padding: 13px;
+
+            border-radius: 15px;
+
+        }
+
+
+        .resume-wrapper {
+
+            padding: 6px;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 500px) {
+
+        .background {
+
+            background-attachment:
+                scroll;
+
+        }
+
+
+        .page {
+
+            padding:
+                25px 10px 20px;
+
+        }
+
+
+        .header {
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .header h1 {
+
+            font-size:
+                2.5rem;
+
+            letter-spacing:
+                -1.5px;
+
+        }
+
+
+        .header p {
+
+            font-size:
+                11px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        .resume-container {
+
+            padding:
+                9px;
+
+            border-radius:
+                13px;
+
+        }
+
+
+        .resume-wrapper {
+
+            padding:
+                4px;
+
+            border-radius:
+                9px;
+
+        }
+
+
+        .resume-image {
+
+            width:
+                100%;
+
+            border-width:
+                1px;
+
+        }
+
+
+        .download-section {
+
+            margin-top:
+                17px;
+
+        }
+
+
+        .download-btn {
+
+            width:
+                100%;
+
+            max-width:
+                300px;
+
+        }
+
+
+        .back-btn {
+
+            width:
+                100%;
+
+            max-width:
+                300px;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 350px) {
+
+        .header h1 {
+
+            font-size:
+                2.2rem;
+
+        }
+
+
+        .resume-container {
+
+            padding:
+                6px;
+
+        }
+
+    }
+
 </style>
-  
-    <div class="containner">
-  <img src="images/resume.png">
 
 
-    </div>
-      <a href="images/resume.png" download class="download-btn">
-        Download Resume
-    </a>
+</head>
+
+<body>
+
+
+<!-- =================================================
+     BACKGROUND
+================================================= -->
+
+<div class="background"></div>
+
+
+
+<!-- =================================================
+     PAGE
+================================================= -->
+
+<main class="page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="header">
+
+
+        <div class="tag">
+
+            <span class="dot"></span>
+
+            My Resume
+
+        </div>
+
+
+        <h1>
+
+            M.
+            <span>
+                Ramesh
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Web Developer • Programmer • BCA Student
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         RESUME
+    ================================================= -->
+
+    <section class="resume-container">
+
+
+        <div class="resume-wrapper">
+
+
+            <img
+                src="images/resume.png"
+                alt="M. Ramesh Resume"
+                class="resume-image"
+            >
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DOWNLOAD
+        ================================================= -->
+
+        <div class="download-section">
+
+
+            <p>
+
+                View or download my latest resume
+
+            </p>
+
+
+            <a
+                href="images/resume.png"
+                download="M-Ramesh-Resume.png"
+                class="download-btn"
+            >
+
+                <span>↓</span>
+
+                Download Resume
+
+            </a>
+
+
+            <br>
+
+
+            <a
+                href="index.html"
+                class="back-btn"
+            >
+
+                ← Back to Home
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+        © 2026
+        <span>
+            M. Ramesh
+        </span>
+        | All Rights Reserved
+
+    </footer>
+
+
+</main>
+
 
 </body>
+
 </html>
