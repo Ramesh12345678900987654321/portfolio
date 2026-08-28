@@ -1,171 +1,811 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
   <title>M. Ramesh | Web Developer</title>
 
   <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+    /* ==============================
+       RESET
+    ============================== */
 
-p{
-  font-size: 20px;
-  margin-bottom: 5px;
-  margin-left: 50px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* SIDEBAR */
-.sidebar {
-  width: 220px;
-  background-color: #1b1b1b;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.logo {
-  text-align: center;
-}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: #111;
+    }
 
-.logo small {
-  color: red;
-}
 
-.sidebar nav a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  padding: 10px 0;
-}
+    /* ==============================
+       MAIN LAYOUT
+    ============================== */
 
-.sidebar nav a:hover {
-  color: #00fff0;
-}
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+    }
 
-/* INTRO */
-.intro {
-  background-image: url('https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg');
-  width: calc(100% - 220px);
-  margin-left: 0;
-  padding: 100px 30px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 3;
-  color: white;
-  min-height: 100vh;
-}
 
-.intro h1 {
-  font-size: 3rem;
-}
+    /* ==============================
+       SIDEBAR
+    ============================== */
 
-.intro h2 {
-  font-size: 2.5rem;
-}
+    .sidebar {
 
-.highlight {
-  text-shadow: 2px 2px 2px violet;
-}
+      width: 220px;
+      min-width: 220px;
+      min-height: 100vh;
 
-.sub {
-  margin: 20px 0;
-}
+      background-color: #1b1b1b;
 
-h3{
-  font-size: 30px;
-}
+      padding: 30px 20px;
 
-.side {
-  margin-left: 60px;
-  color: rgb(255, 255, 255);
-  width: 300px;
-}
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-.card {
-  margin-top: 5px;
-  padding: 7px;
-  margin-left: 50px;
-  background: #676767;
-  border-radius: 5px;
-}
+      color: white;
 
-.spam {
-  color: red;
-}
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
 
-.nav{
-  margin-bottom: auto;
-}
+      z-index: 100;
+    }
 
-.im{
-height: 2cm;
-width: 2cm;
-border-radius: 50%;
-}
 
-.p{
-  margin-right: 30px;
-}
+    /* ==============================
+       LOGO
+    ============================== */
+
+    .logo {
+      text-align: center;
+    }
+
+    .im {
+
+      width: 80px;
+      height: 80px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      display: block;
+
+      margin: 0 auto 10px;
+    }
+
+    .logo-name {
+
+      font-size: 20px;
+
+      margin: 0 0 5px;
+
+      color: white;
+    }
+
+    .logo small {
+
+      color: red;
+
+      font-size: 14px;
+    }
+
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+
+    .nav {
+
+      margin-top: 40px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 5px;
+    }
+
+    .sidebar nav a {
+
+      display: block;
+
+      color: #ccc;
+
+      text-decoration: none;
+
+      padding: 10px;
+
+      border-radius: 5px;
+
+      transition: 0.3s;
+    }
+
+    .sidebar nav a:hover {
+
+      color: #00fff0;
+
+      background: #292929;
+    }
+
+
+    /* ==============================
+       INTRO
+    ============================== */
+
+    .intro {
+
+      width: calc(100% - 220px);
+
+      margin-left: 220px;
+
+      min-height: 100vh;
+
+      padding: 100px 50px;
+
+      background-image:
+        linear-gradient(
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.35)
+        ),
+        url('https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg');
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-attachment: fixed;
+
+      color: white;
+    }
+
+
+    /* ==============================
+       HEADINGS
+    ============================== */
+
+    .intro h1 {
+
+      font-size: 3rem;
+
+      line-height: 1.2;
+
+      margin-bottom: 5px;
+    }
+
+    .intro h2 {
+
+      font-size: 2.5rem;
+
+      line-height: 1.2;
+
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+
+      text-shadow:
+        2px 2px 2px violet;
+    }
+
+
+    /* ==============================
+       SUBTITLE
+    ============================== */
+
+    .sub {
+
+      font-size: 20px;
+
+      margin: 0 0 50px;
+
+      line-height: 1.5;
+    }
+
+
+    /* ==============================
+       ABOUT
+    ============================== */
+
+    .side {
+
+      margin-left: 60px;
+
+      width: min(100%, 550px);
+
+      color: white;
+    }
+
+    .side h3 {
+
+      font-size: 30px;
+
+      margin-bottom: 15px;
+    }
+
+    .about-text {
+
+      font-size: 20px;
+
+      line-height: 1.6;
+
+      margin: 0 0 20px;
+    }
+
+    .spam {
+
+      color: red;
+
+      font-weight: bold;
+    }
+
+
+    /* ==============================
+       CARDS
+    ============================== */
+
+    .card {
+
+      width: 100%;
+
+      margin: 8px 0;
+
+      padding: 10px 12px;
+
+      background: rgba(103, 103, 103, 0.9);
+
+      border-radius: 5px;
+
+      font-size: 16px;
+
+      transition: 0.3s;
+    }
+
+    .card:hover {
+
+      transform: translateX(5px);
+
+      background: rgba(80, 80, 80, 0.95);
+    }
+
+
+    /* ==============================
+       TABLET
+       769px - 1000px
+    ============================== */
+
+    @media (max-width: 1000px) {
+
+      .sidebar {
+
+        width: 190px;
+
+        min-width: 190px;
+
+        padding: 25px 15px;
+      }
+
+      .intro {
+
+        width: calc(100% - 190px);
+
+        margin-left: 190px;
+
+        padding: 80px 35px;
+
+        background-attachment: scroll;
+      }
+
+      .intro h1 {
+
+        font-size: 2.7rem;
+      }
+
+      .intro h2 {
+
+        font-size: 2.2rem;
+      }
+
+      .side {
+
+        margin-left: 30px;
+
+        width: min(100%, 500px);
+      }
+
+      .about-text {
+
+        font-size: 18px;
+      }
+    }
+
+
+    /* ==============================
+       SMALL TABLET
+       601px - 768px
+    ============================== */
+
+    @media (max-width: 768px) {
+
+      .sidebar {
+
+        width: 170px;
+
+        min-width: 170px;
+
+        padding: 20px 12px;
+      }
+
+      .intro {
+
+        width: calc(100% - 170px);
+
+        margin-left: 170px;
+
+        padding: 70px 25px;
+      }
+
+      .im {
+
+        width: 65px;
+
+        height: 65px;
+      }
+
+      .logo-name {
+
+        font-size: 18px;
+      }
+
+      .sidebar nav a {
+
+        font-size: 14px;
+
+        padding: 9px 8px;
+      }
+
+      .intro h1 {
+
+        font-size: 2.3rem;
+      }
+
+      .intro h2 {
+
+        font-size: 1.9rem;
+      }
+
+      .sub {
+
+        font-size: 17px;
+
+        margin-bottom: 35px;
+      }
+
+      .side {
+
+        margin-left: 10px;
+
+        width: min(100%, 450px);
+      }
+
+      .side h3 {
+
+        font-size: 26px;
+      }
+
+      .about-text {
+
+        font-size: 17px;
+      }
+
+      .card {
+
+        font-size: 15px;
+      }
+    }
+
+
+    /* ==============================
+       MOBILE
+       600px AND BELOW
+    ============================== */
+
+    @media (max-width: 600px) {
+
+      .page {
+
+        display: block;
+      }
+
+
+      /* SIDEBAR → TOP NAVIGATION */
+
+      .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        min-width: 100%;
+
+        min-height: auto;
+
+        padding: 20px 12px;
+
+        display: block;
+      }
+
+
+      .logo {
+
+        margin-bottom: 15px;
+      }
+
+      .im {
+
+        width: 70px;
+
+        height: 70px;
+      }
+
+      .logo-name {
+
+        font-size: 19px;
+      }
+
+
+      /* MOBILE NAV */
+
+      .nav {
+
+        margin-top: 15px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+      }
+
+      .sidebar nav a {
+
+        padding: 9px 12px;
+
+        font-size: 14px;
+      }
+
+
+      /* INTRO */
+
+      .intro {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        min-height: calc(100vh - 180px);
+
+        padding: 60px 20px;
+
+        background-attachment: scroll;
+
+        background-position: center;
+      }
+
+
+      .intro h1 {
+
+        font-size: 2.1rem;
+      }
+
+      .intro h2 {
+
+        font-size: 1.7rem;
+
+        margin-bottom: 15px;
+      }
+
+
+      .sub {
+
+        font-size: 16px;
+
+        margin-bottom: 40px;
+      }
+
+
+      /* ABOUT */
+
+      .side {
+
+        margin-left: 0;
+
+        width: 100%;
+      }
+
+      .side h3 {
+
+        font-size: 25px;
+
+        margin-bottom: 12px;
+      }
+
+      .about-text {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+      }
+
+
+      /* CARDS */
+
+      .card {
+
+        width: 100%;
+
+        margin: 8px 0;
+
+        padding: 11px;
+
+        font-size: 14px;
+      }
+
+    }
+
+
+    /* ==============================
+       SMALL PHONES
+       380px AND BELOW
+    ============================== */
+
+    @media (max-width: 380px) {
+
+      .sidebar {
+
+        padding: 15px 8px;
+      }
+
+      .im {
+
+        width: 60px;
+
+        height: 60px;
+      }
+
+      .logo-name {
+
+        font-size: 17px;
+      }
+
+      .logo small {
+
+        font-size: 12px;
+      }
+
+
+      .nav {
+
+        gap: 3px;
+      }
+
+      .sidebar nav a {
+
+        font-size: 12px;
+
+        padding: 8px 9px;
+      }
+
+
+      .intro {
+
+        padding: 50px 15px;
+      }
+
+      .intro h1 {
+
+        font-size: 1.8rem;
+      }
+
+      .intro h2 {
+
+        font-size: 1.45rem;
+      }
+
+      .sub {
+
+        font-size: 14px;
+      }
+
+      .side h3 {
+
+        font-size: 22px;
+      }
+
+      .about-text {
+
+        font-size: 15px;
+      }
+
+      .card {
+
+        font-size: 13px;
+
+        padding: 10px;
+      }
+
+    }
+
   </style>
+
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+<div class="page">
+
+  <!-- ============================
+       SIDEBAR
+  ============================= -->
+
+  <aside class="sidebar">
+
+<div>
+
+
   <div class="logo">
 
-    <p class="p">M. Ramesh</p>
-    <small>Developer</small>
-  </div>
-
-  <nav class="nav">
-    <a href="about.html">About</a>
-
-    <a href="work.html">Work</a>
-    <a href="resum.html">Resume</a>
-    <a href="contact.html">Contact</a>
-    <a href="project.html">Projects</a>
-  </nav>
-</div>
-
-<section class="intro">
-
-  <h1>Hi, I'm <span class="highlight">Ramesh</span></h1>
-  <h2>Web Developer</h2>
-  <p class="sub">Front End Developer / Programming Enthusiast</p>
-
-  <div class="side">
-    <h3>About Me</h3>
-
-    <p>
-      I’m currently pursuing a BCA degree. I'm passionate about web development 
-      and learning <span class="spam">HTML, CSS, JavaScript</span>.
+   
+    <p class="logo-name">
+      M. Ramesh
     </p>
 
-    <div class="card">🔥 Programming Enthusiast</div>
-    <div class="card">💻 Frontend & Backend Developer</div>
-    <div class="card">🎓 BCA Student</div>
-    <div class="card">📊 Data Structures and Algorithms</div>
-    <div class="card">⚙️ Software Engineering</div>
+    <small>
+      Developer
+    </small>
 
   </div>
 
-</section>
+
+  <nav class="nav">
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="work.html">
+      Work
+    </a>
+
+    <a href="resum.html">
+      Resum
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="project.html">
+      Projects
+    </a>
+
+  </nav>
+
+</div>
+
+  </aside>
+
+  <!-- ============================
+       INTRO
+  ============================= -->
+
+  <section class="intro">
+
+<h1>
+  Hi, I'm
+  <span class="highlight">
+    Ramesh
+  </span>
+</h1>
+
+
+<h2>
+  Web Developer
+</h2>
+
+
+<p class="sub">
+  Front End Developer / Programming Enthusiast
+</p>
+
+
+
+<!-- ABOUT -->
+
+<div class="side">
+
+
+  <h3>
+    About Me
+  </h3>
+
+
+  <p class="about-text">
+
+    I’m currently pursuing a BCA degree.
+    I'm passionate about web development
+    and learning
+    <span class="spam">
+      HTML, CSS, JavaScript
+    </span>.
+
+  </p>
+
+
+  <div class="card">
+    🔥 Programming Enthusiast
+  </div>
+
+
+  <div class="card">
+    💻 Frontend & Backend Developer
+  </div>
+
+
+  <div class="card">
+    🎓 BCA Student
+  </div>
+
+
+  <div class="card">
+    📊 Data Structures and Algorithms
+  </div>
+
+
+  <div class="card">
+    ⚙️ Software Engineering
+  </div>
+
+
+</div>
+
+
+  </section>
+
+</div>
 
 </body>
+
 </html>
